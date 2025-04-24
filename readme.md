@@ -51,8 +51,8 @@ Este é um projeto de front-end para uma **página de e-commerce** fictícia res
 ## 📌 Aprendizados
 
 Este projeto me ajudou a reforçar:
-Organização de layout com Tailwind
-Boas práticas de responsividade
+- Organização de layout com Tailwind
+- Boas práticas de responsividade
 
 
 ## 📲 Contato
