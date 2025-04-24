@@ -29,9 +29,12 @@ Este é um projeto de front-end para uma **página de e-commerce** fictícia res
 [Visualizar](https://avanti-landing-page.vercel.app/)
 
 - Versão Desktop:
+-
 ![Versão desktop](/assets/images/avanti_desktop.png)
 
+
 - Versão Mobile:
+-
 ![Versão mobile](/assets/images/avanti_mobile.png)
 
 
@@ -55,4 +58,4 @@ Boas práticas de responsividade
 ## 📲 Contato
 
 Desenvolvido por:
-Elane Alencar `[LinkedIn](https://linkedin.com/in/elanealencar/)` 
+Elane Alencar [LinkedIn](https://linkedin.com/in/elanealencar/) 
