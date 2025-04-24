@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avanti - Innovation Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="bg-white text-gray-800 w-full font-nunitoSans">
+    <!-- Barra fixa no topo -->
+    <div class="fixed top-0 left-0 w-full h-[52px] sm:h-8 z-50 bg-blue-600 text-white text-sm flex flex-col sm:flex-row items-center justify-center sm:px-2">
+        <p>Ganhe <span class="bg-purple-800 rounded-md px-1">R$10,00</span> de desconto no seu primeiro pedido. </p>
+        <p>Utilize o cupom  <span class="italic"> DESCONTO10</span></p>
+    </div>
+      
+
+    <!-- Header principal -->
+    <header class="fixed top-12 sm:top-8 flex flex-col items-center sm:px-52 bg-white w-full h-30 z-40">
+            
+        <div class="w-full flex items-center justify-between py-4 px-4 sm:p-0">
+             <!-- Menu hamburguer (mobile) -->
+             <div class="block sm:hidden">
+                <div class="space-y-1">
+                    <span class="block w-6 h-0.5 bg-black"></span>
+                    <span class="block w-6 h-0.5 bg-black"></span>
+                    <span class="block w-6 h-0.5 bg-black"></span>
+                </div>
+            </div>
+
+            <!-- Logo -->
+            <div class="flex justify-center sm:justify-start">
+                <img src="assets/images/avanti_logo.svg" alt="Logo da Avanti" class="h-7 w-auto" />
+            </div>
+
+            <!-- Campo de busca desktop -->
+            <div class="hidden sm:w-full sm:flex items-center justify-center">
+                <div class="w-full mx-4 relative">
+                    <input
+                        id="input-buscar"
+                        type="text"
+                        placeholder="Digite aqui o que você procura"
+                        class="w-full pl-4 pr-10 py-2 border rounded-md"
+                    />
+                    <img 
+                        id="botao-buscar"
+                        src="assets/icons/icon_lupa.svg" 
+                        alt="ícone de busca"
+                        class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 cursor-pointer"
+                    /> 
+                </div>
+                
+
+            <div id="resultado" class="mt-2 text-lg font-medium text-blue-700"></div>
+
+            </div>
+
+            <!-- Login + carrinho (desktop ) -->
+
+            <div class="hidden sm:flex items-center space-x-4">
+                <img  
+                    src="assets/icons/icon_login.svg" 
+                    alt="Icone de login" 
+                    class="h-6"
+                />
+                <div class="text-sm">
+                    <div>Olá,</div>
+                    <div>Nome cliente!</div>
+                </div>
+                <div class="relative cursor-pointer">
+                    <div class="absolute -top-1 -right-5 mx-4 bg-blue-600 text-white text-xs rounded-full px-1">2</div>
+                    <img  
+                        src="assets/icons/icon_carrinho.svg" 
+                        alt="Icone de carrinho de compras" 
+                        class="h-8"
+                    />  
+                </div>
+            </div>
+
+            <!-- Carrinho (mobile) -->
+            <div class="block sm:hidden relative">
+                <div class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full px-1">2</div>
+                <img src="assets/icons/icon_carrinho.svg" alt="Carrinho mobile" class="w-6 h-6" />
+            </div>
+
+        </div>
+
+        <!-- Campo de busca mobile  -->
+        <div class="sm:hidden w-full items-center justify-center px-4 pb-4">
+            <div class="w-full sm:w-auto flex-1 relative">
+                <input
+                    id="input-buscar"
+                    type="text"
+                    placeholder="Digite aqui o que você procura"
+                    class="w-full pl-4 pr-10 py-2 border rounded-md"
+                />
+                <img 
+                    id="botao-buscar"
+                    src="assets/icons/icon_lupa.svg" 
+                    alt="ícone de busca"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 cursor-pointer"
+                /> 
+            </div>
+        </div>
+      
+    <!-- Menu de categorias (versão web) -->
+    <nav class="bg-white w-full relative hidden sm:flex">
+        <ul class="hidden sm:flex gap-2 justify-around items-center w-full">
+            <!-- Menu principal -->
+            <li class="relative group">
+                <a href="#" class="flex items-center gap-4 text-sm font-bold group-hover:text-blue-700">
+                    <div class="space-y-1">
+                    <!-- Ícone hamburger -->
+                    <span class="block w-4 h-0.5 bg-black group-hover:bg-blue-700"></span>
+                    <span class="block w-4 h-0.5 bg-black group-hover:bg-blue-700"></span>
+                    <span class="block w-4 h-0.5 bg-black group-hover:bg-blue-700"></span>
+                  </div>
+                  <span class="font-bold">Todas as Categorias</span>
+                </a>
+            
+                <!-- Menu flutuante -->
+                <div class="absolute left-0 top-full w-[1000px] bg-white shadow-lg rounded hidden group-hover:flex flex-row z-50">
+               
+                    <!-- Coluna: Departamentos -->
+                    <div class="w-[234px] border-r pr-4 bg-[#F5F5F5] p-8">
+                        <p class="text-sm font-bold text-blue-700 mb-2 flex justify-between">Departamento<span>›</span></p>
+                        <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between hover:text-blue-700 cursor-pointer">Departamento <span>›</span></li>
+                        <li class="flex justify-between hover:text-blue-700 cursor-pointer">Departamento <span>›</span></li>
+                        <li class="flex justify-between hover:text-blue-700 cursor-pointer">Departamento <span>›</span></li>
+                        <li class="flex justify-between hover:text-blue-700 cursor-pointer">Departamento <span>›</span></li>
+                        <li class="flex justify-between hover:text-blue-700 cursor-pointer">Departamento <span>›</span></li>
+                        <li class="flex justify-between hover:text-blue-700 cursor-pointer">Departamento <span>›</span></li>
+                        <li class="flex justify-between hover:text-blue-700 cursor-pointer">Departamento <span>›</span></li>
+                        <li class="flex justify-between hover:text-blue-700 cursor-pointer">Departamento <span>›</span></li>
+                        <li class="flex justify-between hover:text-blue-700 cursor-pointer">Departamento <span>›</span></li>
+                        <li class="flex justify-between hover:text-blue-700 cursor-pointer">Departamento <span>›</span></li>
+                        </ul>
+                    </div>
+                    <!-- Coluna: Categorias -->
+                    <div class="p-8 w-[180px]">
+                        <p class="text-sm font-bold text-blue-700 mb-2">Categoria</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                        </ul>
+                    </div>
+                    <!-- Coluna: Categorias -->
+                    <div class="p-8 w-[180px]">
+                        <p class="text-sm font-bold text-blue-700 mb-2">Categoria</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                        </ul>
+                    </div>
+                    <!-- Coluna: Categorias -->
+                    <div class="p-8 w-[180px]">
+                        <p class="text-sm font-bold text-blue-700 mb-2">Categoria</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                        </ul>
+                    </div>
+                    <!-- Imagem lateral -->
+                    <div class="m-6 w-[236px] h-[298px] rounded-xl relative text-white flex flex-col justify-center items-center overflow-hidden">
+                        <img src="assets/images/banner2.png" class="absolute h-full w-full object-cover rounded-xl z-0"/>
+                        <div class="absolute h-full w-full bg-gradient-to-l from-black/80 to-transparent rounded-xl z-10"></div>
+                        <div class="relative z-20 px-4 space-y-4">
+                            <p class="text-2xl">Confira os<br>Produtos<br>Que acabaram<br>De chegar</p>
+                            <button class="w-[116px] h-[38px] border border-white text-white rounded text-xs hover:bg-white hover:text-black transition">
+                                VER TODOS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Menu dos departamentos -->  
+            <li class="relative group">
+                <a href="#" class="text-sm hover:text-blue-700 cursor-pointer">Departamento</a>
+                <!-- Submenu suspenso -->
+                <div class="absolute top-full w-[800] bg-white shadow-lg rounded hidden group-hover:flex flex-row z-50 left-0">
+                    <!-- Coluna 1 -->
+                    <div class="p-8 w-[180px]">
+                        <p class="text-sm font-bold text-blue-700 mb-2">Categoria</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                        </ul>
+                    </div>
+                  <!-- Coluna 2 -->
+                    <div class="p-8 w-[180px]">
+                        <p class="text-sm font-bold text-blue-700 mb-2">Categoria</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                        </ul>
+                    </div>
+                  <!-- Coluna 3 -->
+                    <div class="p-8 w-[180px]">
+                        <p class="text-sm font-bold text-blue-700 mb-2">Categoria</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                        </ul>
+                    </div>
+
+                    <!-- Imagem lateral -->
+                    <div class="m-6 w-[236px] h-[298px] rounded-xl relative text-white flex flex-col justify-center items-center overflow-hidden">
+                        <img src="assets/images/banner2.png" class="absolute h-full w-full object-cover rounded-xl z-0"/>
+                        <div class="absolute h-full w-full bg-gradient-to-l from-black/80 to-transparent rounded-xl z-10"></div>
+                        <div class="relative z-20 px-4 space-y-4">
+                            <p class="text-2xl">Confira os<br>Produtos<br>Que acabaram<br>De chegar</p>
+                            <button class="w-[116px] h-[38px] border border-white text-white rounded text-xs hover:bg-white hover:text-black transition">
+                                VER TODOS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+              
+
+            <li class="relative group">
+                <a href="#" class="text-sm hover:text-blue-700 cursor-pointer">Departamento</a>
+                <!-- Submenu suspenso -->
+                <div class="absolute left-0 top-full w-[800] bg-white shadow-lg rounded hidden group-hover:flex flex-row z-50">
+                    <!-- Coluna 1 -->
+                    <div class="p-8 w-[180px]">
+                        <p class="text-sm font-bold text-blue-700 mb-2">Categoria</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                        </ul>
+                    </div>
+                  <!-- Coluna 2 -->
+                    <div class="p-8 w-[180px]">
+                        <p class="text-sm font-bold text-blue-700 mb-2">Categoria</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                        </ul>
+                    </div>
+                  <!-- Coluna 3 -->
+                    <div class="p-8 w-[180px]">
+                        <p class="text-sm font-bold text-blue-700 mb-2">Categoria</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                            <li class="hover:text-blue-700 cursor-pointer">Categoria</li>
+                        </ul>
+                    </div>
+
+                    <!-- Imagem lateral -->
+                    <div class="m-6 w-[236px] h-[298px] rounded-xl relative text-white flex flex-col justify-center items-center overflow-hidden">
+                        <img src="assets/images/banner2.png" class="absolute h-full w-full object-cover rounded-xl z-0"/>
+                        <div class="absolute h-full w-full bg-gradient-to-l from-black/80 to-transparent rounded-xl z-10"></div>
+                        <div class="relative z-20 px-4 space-y-4">
+                            <p class="text-2xl">Confira os<br>Produtos<br>Que acabaram<br>De chegar</p>
+                            <button class="w-[116px] h-[38px] border border-white text-white rounded text-xs hover:bg-white hover:text-black transition">
+                                VER TODOS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+            
+            <li><a href="#" class="text-sm hover:text-blue-700 cursor-pointer">Departamento</a></li>
+            <li><a href="#" class="text-sm hover:text-blue-700 cursor-pointer">Departamento</a></li>
+            <li><a href="#" class="text-sm hover:text-blue-700 cursor-pointer">Departamento</a></li>
+            <li><a href="#" class="text-sm hover:text-blue-700 cursor-pointer">Departamento</a></li>
+            <li><a href="#" class="text-sm hover:text-blue-700 cursor-pointer">Departamento</a></li>
+            <li><a href="#" class="text-sm hover:text-blue-700 cursor-pointer">Departamento</a></li>
+            
+        </ul>
+    </nav>
+
+    </header>
+
+    <!-- Espaço para pular o header fixo -->
+    <div class="h-40 sm:h-32"></div>
+
+    <!-- Seção banner principal -->
+
+    <section class="h-[280px] sm:h-[380px] w-full bg-[#E7E7EA] flex flex-row items-center justify-center sm:px-52">
+         <!-- Imagem de fundo -->
+            <div class="w-[50%] h-[100%] sm:w-full sm:h-full z-0">
+                <img 
+                    src="assets/images/banner.png"
+                    alt="Banner Super Sale"
+                    class="hidden sm:flex h-full w-full  z-0" 
+                />
+                <img 
+                    src="assets/images/banner_mobile.png"
+                    alt="Banner Super Sale"
+                    class="flex sm:hidden h-full w-full  z-0" 
+                />
+            </div>
+            <div class="sm:hidden flex-col items-center justify-end text-center font-nunito z-10">
+                <h1 class="text-6xl sm:text-4xl mb-2 font-bold text-black">SUPER</span></h1>
+                <h1 class="text-6xl sm:text-4xl mb-2 text-black">SALE</h1>
+                <p class="text-lg mb-1 tracking-widest text-blue-600">SELECTED ITENS UP TO</p>
+                <p class="text-5xl sm:text-3xl font-bold text-blue-600">50% OFF</p>
+            </div>    
+            <!-- Texto para desktop -->
+            <div class="hidden sm:flex flex-col items-center justify-center font-nunito z-10">
+                <h1 class="text-8xl mb-4"><span class="font-bold">SUPER</span><br class="sm:hidden"/>SALE</h1>
+                <p class="text-2xl mb-4 text-blue-600 tracking-[8px]">ITENS SELECIONADOS COM</p>
+                <p class="text-6xl font-bold text-blue-600">50% OFF</p>
+            </div>
+        
+    </section>
+
+    <!-- Seção Lançamentos -->
+    <section class="carrossel-lancamento relative sm:mx-60 py-12 bg-white">
+        <h2 class="text-xl font-bold">Lançamentos</h2>
+        <h2 class="text-sm font-bold text-end mb-4">Ver mais</h2>
+
+        <div class="seta-esquerda absolute sm:left-[-14px] -translate-y-1/2 top-1/2 z-10 w-[30px] h-[30px] border-[1px] border-[#005CFF] rounded-full hidden sm:flex items-center justify-center bg-white shadow-md cursor-pointer">
+            <img src="assets/icons/icon_left.svg" alt="Seta para esquerda" class="w-3 h-3">
+        </div>
+        
+        <div class="seta-direita absolute right-[-14px] -translate-y-1/2 top-1/2 z-10  w-[30px] h-[30px] border-[1px] border-[#005CFF] rounded-full hidden sm:flex items-center justify-center bg-white shadow-md cursor-pointer">
+            <img src="assets/icons/icon_right.svg" alt="Seta para direita" class="w-3 h-3">
+        </div>
+      
+        <div class="carrossel flex overflow-x-auto scroll-smooth gap-1 flex-row no-scrollbar [&::-webkit-scrollbar]:hidden scrollbar-thin scrollbar-thumb-transparent">
+            <!-- Card de cada produto -->
+            <div class="h-[380px] w-[222px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+        </div>
+    <div class="flex gap-2 justify-center py-2 cursor-pointer">
+        <div class="w-[7px] h-[7px] bg-[#303030] rounded-full"></div>
+        <div class="w-[7px] h-[7px] bg-[#838383] rounded-full"></div>
+        <div class="w-[7px] h-[7px] bg-[#838383] rounded-full"></div>
+    </div>
+    
+
+    </section>
+
+    <!-- Seção foto / texto -->
+    <section class="h-[680px] w-full sm:px-52 mb-14">
+        <div class="flex flex-col sm:flex-row gap-4">
+            <div class="h-[380px] sm:h-[680px] w-full bg-[#C2C2C2] flex items-center justify-center">
+                <img 
+                src="assets/images/Free_Mug_Mockup_2.png" 
+                alt="Foto de um produto" 
+                class="h-[400px] w-[400px] sm:w-[500px] sm:h-[500px]" />
+            </div>
+            <div class="p-6 h-[400px] sm:h-[680px] w-full flex flex-col justify-center">
+                <p class="text-3xl font-bold mb-6">LOREM IPSUM
+                </p>
+                <p class="hidden sm:flex text-lg">
+                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. 
+                    Fusce sagittis elit a libero commodo egestas efficitur id augue.                  
+                    <br>
+                    <br>
+                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. 
+                    Fusce sagittis elit a libero commodo egestas efficitur id augue.                  
+                </p>
+                <p class="flex sm:hidden text-lg">
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.                  
+                    <br>
+                    <br>
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção texto ícones + foto -->
+    <section class="h-auto sm:h-[680px] w-full sm:mt-10 mt-20 pb-8 bg-[#DEDEDE]">
+        <div class="flex flex-col-reverse sm:flex-row items-center justify-center gap-10 sm:mt-4 sm:px-52">
+            <!-- Coluna de ícones e textos-->
+            <div class="px-8 sm:px-2 flex flex-col gap-8 w-[100%] sm:w-[50%]">
+                <p class="text-3xl sm:mb-6 text-center font-bold">LOREM IPSUM</p>
+        
+                <!-- Item 1 -->
+                <div class="flex flex-row gap-4 items-center">
+                    <div class="bg-[#005CFF] flex flex-shrink-0 items-center justify-center w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-full gap-2">
+                        <img src="assets/icons/icon_local.svg" alt="Ícone local" class="w-7 h-7 sm:w-10 sm:h-10" />
+                    </div>    
+                    <p class="text-md text-[#4F4F4F]">
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+                    </p>
+                </div>
+        
+                <!-- Item 2 -->
+                <div class="flex flex-row gap-4 items-center">
+                    <div class="bg-[#005CFF] flex flex-shrink-0 items-center justify-center w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-full gap-2">
+                        <img src="assets/icons/icon_local.svg" alt="Ícone local" class="w-7 h-7 sm:w-10 sm:h-10" />
+                    </div>    
+                    <p class="text-md text-[#4F4F4F]">
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+                    </p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="flex flex-row gap-4 items-center">
+                    <div class="bg-[#005CFF] flex flex-shrink-0 items-center justify-center w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-full gap-2">
+                        <img src="assets/icons/icon_local.svg" alt="Ícone local" class="w-7 h-7 sm:w-10 sm:h-10" />
+                    </div>    
+                    <p class="text-md text-[#4F4F4F]">
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+                    </p>
+                </div>
+            </div>
+      
+          <!-- Coluna direita (imagem) -->
+          <div class="w-full sm:w-[652px] h-full p-10">
+            <img src="assets/images/banner2.png" alt="Foto de um produto" />
+          </div>
+
+        </div>
+    </section>      
+
+    <!-- Seção foto / texto -->
+    <section class="h-auto w-full sm:px-52 mt-14">
+        <div class="flex flex-col sm:flex-row gap-4">
+            <div class="h-[380px] sm:h-[680px] w-full bg-[#C2C2C2] flex items-center justify-center">
+                <img 
+                src="assets/images/Free_Mug_Mockup_2.png" 
+                alt="Foto de um produto" 
+                class="h-[400px] w-[400px] sm:w-[500px] sm:h-[500px]" />
+            </div>
+            <div class="p-6 h-[400px] sm:h-[680px] w-full flex flex-col justify-center">
+                <p class="text-3xl font-bold mb-6">LOREM IPSUM
+                </p>
+                <p class="hidden sm:flex text-lg">
+                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. 
+                    Fusce sagittis elit a libero commodo egestas efficitur id augue.                  
+                    <br>
+                    <br>
+                    Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. 
+                    Fusce sagittis elit a libero commodo egestas efficitur id augue.                  
+                </p>
+                <p class="flex sm:hidden text-lg">
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.                  
+                    <br>
+                    <br>
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Lançamentos -->
+    <section class="carrossel-lancamento relative sm:mx-60 py-12 bg-white">
+        <h2 class="text-xl font-bold">Lançamentos</h2>
+        <h2 class="text-sm font-bold text-end mb-4">Ver mais</h2>
+
+        <div class="seta-esquerda absolute sm:left-[-14px] -translate-y-1/2 top-1/2 z-10 w-[30px] h-[30px] border-[1px] border-[#005CFF] rounded-full hidden sm:flex items-center justify-center bg-white shadow-md cursor-pointer">
+            <img src="assets/icons/icon_left.svg" alt="Seta para esquerda" class="w-3 h-3">
+        </div>
+        
+        <div class="seta-direita absolute right-[-14px] -translate-y-1/2 top-1/2 z-10  w-[30px] h-[30px] border-[1px] border-[#005CFF] rounded-full hidden sm:flex items-center justify-center bg-white shadow-md cursor-pointer">
+            <img src="assets/icons/icon_right.svg" alt="Seta para direita" class="w-3 h-3">
+        </div>
+      
+        <div class="carrossel flex overflow-x-auto scroll-smooth gap-1 flex-row no-scrollbar [&::-webkit-scrollbar]:hidden scrollbar-thin scrollbar-thumb-transparent">
+            <!-- Card de cada produto -->
+            <div class="h-[380px] w-[222px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+            <div class="h-[380px] w-[238px] bg-white rounded-lg border-[#DDDDDD] border-[1px]">
+                <div class="relative w-[200px] h-[200px] bg-[url('assets/images/produto.png')] bg-cover bg-center">
+                    <span class="absolute top-2 left-2 bg-[#00264E] text-white text-xs px-2 py-1 rounded">NOVO</span>
+                </div>
+                <div class="p-3 flex flex-col gap-1">
+                    <p class="text-sm text-[#303030]">Lorem ipsum dolor sit amet consectetuer adipiscing elit</p>
+                    <div class="flex flex-row items-center gap-4">
+                        <div>
+                            <p class="text-xs line-through"> R$ 99,90 </p>
+                            <p class="text-sm font-bold">R$ 79,90</p>
+                        </div>
+                        <div>
+                            <span class="bg-[#5EC0BE] text-white text-xs px-2 py-1 rounded underline">10% OFF</span>
+                        </div>                
+                    </div>
+                    <div class="text-xs">Ou em até <span class="font-bold">10x de R$ 7,90</span></div>
+                    
+                    <button class="cursor-pointer mt-2 w-full bg-blue-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-blue-700 transition-colors">                    Comprar
+                    </button>
+                </div>     
+            </div>
+        </div>
+    <div class="flex gap-2 justify-center py-2 cursor-pointer">
+        <div class="w-[7px] h-[7px] bg-[#303030] rounded-full"></div>
+        <div class="w-[7px] h-[7px] bg-[#838383] rounded-full"></div>
+        <div class="w-[7px] h-[7px] bg-[#838383] rounded-full"></div>
+    </div>
+    
+
+    </section>
+
+    <!-- Seção Contato -->
+    <section class="h-[450px] sm:h-[660px] w-full bg-[url(assets/images/bg-avanti2.png)] sm:bg-[url(assets/images/bg-avanti.png)] bg-center bg-no-repeat flex items-center justify-center mb-10">
+        <div class="h-[132px] w-full bg-[#005CFF] flex items-center justify-center ">
+            <p class="text-white text-lg sm:text-3xl p-10 text-center">Entre em contato conosco e verifique a disponibilidade para sua região!</p>
+        </div>
+    </section>
+
+    <!-- Seção Newsletter -->
+
+    <section class="mb-10 font-nunitoSan sm:px-52">
+        <p class="text-xl font-bold text-center py-4">Cadastre-se na nossa <span class="text-blue-600">newsletter</span></p>
+        <div class="bg-[#DEDEDE] h-[358px] sm:h-[176px] w-full rounded-lg flex items-center justify-center p-8">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+                <input type="text" placeholder="Digite seu nome" class="w-full h-[48px] rounded-lg">
+                <input type="email" placeholder="Digite seu e-mail" class="w-full h-[48px] rounded-lg">
+                <div class="w-full flex items-center justify-center">
+                    <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="default-checkbox" class="ms-2 text-sm">Estou de acordo com a <span class="underline cursor-pointer">Política de Privacidade</span></label>
+                </div>
+                <button class="cursor-pointer w-full h-[48px] bg-blue-600 text-white text-md py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    Cadastrar
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Rodapé -->
+
+    <footer>
+        <div class="h-[460px] sm:h-[300px] bg-[#F5F5F5] flex flex-col items-center font-nunitoSans sm:px-52">
+            <div class="w-full py-10 h-auto flex flex-col sm:flex-row items-center sm:items-start justify-around">
+                <div>
+                    <img src="assets/images/avanti_logo.svg" alt="Logo da Avanti" class="h-7 w-full mb-6" />
+                    <img src="assets/icons/icons_social.svg" alt="Redes sociais" class="h-7 w-full" />
+                </div>
+                <div class="hidden sm:flex">
+                    <ul>
+                        <li class="font-bold mb-4 cursor-pointer">Institucional</h4>
+                        <li class="mb-2 cursor-pointer">Sobre Nós</li>
+                        <li class="mb-2 cursor-pointer">Nossas Lojas</li>    
+                        <li class="mb-2 cursor-pointer">Privacidade e Segurança</li>    
+                        <li class="mb-2 cursor-pointer">Termos e Condições</li>    
+                    </ul>
+                </div>
+                <div class="hidden sm:flex">
+                    <ul>
+                        <li class="font-bold mb-4">Central de ajuda</h4>
+                        <li class="mb-2 cursor-pointer">Fale Conosco</li>
+                        <li class="mb-2 cursor-pointer">Frete e Entrega</li>    
+                        <li class="mb-2 cursor-pointer">Trocas e Devoluções</li>    
+                        <li class="mb-2 cursor-pointer">Formas de Pagamento</li>    
+                        <li class="mb-2 cursor-pointer">FAQ</li>    
+                    </ul>
+                </div>
+                <div class="hidden sm:flex">
+                    <ul>
+                        <li class="font-bold mb-4">Atendimento</li>
+                        <li class="mb-2"><span class="font-bold mb-4">Telefone:</span>(00) 1234-5678 </li>
+                        <li class="mb-2"><span class="font-bold mb-4">E-mail:</span> exemplo@exemplo.com.br</li>
+                        <li class="mb-2 font-bold">Horário de atendimento:</li>
+                        <li class="mb-2">Segunda a Sábado: 07h00 às 23h00</li>    
+                        <li class="mb-2">Domingos e Feriados: 07h00 às 21h00</li>    
+                    </ul>
+                </div>
+                <ul class="flex items-center justify-center flex-col sm:hidden text-2xl font-bold mt-10 h-auto w-full">
+                    <li class="flex flex-row items-center justify-between px-12 py-4 w-full border-t border-1 border-gray-300">
+                        <h5>Institucional</h5>
+                        <img src="assets/icons/icon_seta_baixo.svg" alt="Redes sociais" class="h-2" />
+                    </li>    
+                    <li class="flex flex-row items-center justify-between px-12 py-4 w-full border-t border-1 border-gray-300">
+                        <h5>Central de ajuda</h5>
+                        <img src="assets/icons/icon_seta_baixo.svg" alt="Redes sociais" class="h-2" />
+                    </li> 
+                    <li class="flex flex-row items-center justify-between px-12 py-4 w-full border-t border-b border-1 border-gray-300">
+                        <h5>Atendimento</h5>
+                        <img src="assets/icons/icon_seta_baixo.svg" alt="Redes sociais" class="h-2" />
+                    </li> 
+                </ul>
+            </div>
+
+            <img src="assets/icons/icons_card.svg" alt="payment methods" class="hidden sm:flex w-[545px] h-auto items-center">
+            <img src="assets/icons/icons_card_mobile.svg" alt="payment methods" class="flex sm:hidden h-auto items-center">
+        
+        </div>
+
+        <p class="hidden sm:flex text-sm text-[#303030] text-center mt-4 sm:mx-52">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+             aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
+             vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        </p>
+        <p class="flex sm:hidden text-sm text-[#303030] text-center mt-4 sm:mx-52">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+            Ut wisi enim ad minim veniam, quis nostrud exerci.
+        </p>
+        <div class="flex justify-center items-center py-4">
+            <img src="assets/icons/icons_footer.svg" alt="logo" class="w-[295px] h-auto">
+        </div>
+        
+
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
