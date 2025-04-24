@@ -17,32 +17,33 @@ Este é um projeto de front-end para uma **página de e-commerce** fictícia res
 - Texto sobreposto ao banner
 - Menu de categorias ocultado para foco na experiência mobile
 
----
-
 ## 🛠️ Tecnologias Utilizadas
 
 - **HTML5**
 - **Tailwind CSS**
-- Responsividade com classes utilitárias (`sm:`, `hidden`, `flex`, etc.)
-
----
+- **Javascript**
 
 ## 📸 Preview
 
+- Visualizar projeto:
+[Visualizar](https://avanti-landing-page.vercel.app/)
+
+- Versão Desktop:
 ![Versão desktop](/assets/images/avanti_desktop.png)
+
+- Versão Mobile:
 ![Versão mobile](/assets/images/avanti_mobile.png)
 
----
 
 ## 📁 Estrutura de pastas
+```
 ├── assets/
 │   └── icons/
 │   └── images/
 ├── index.html
 ├── script.js
 ├── tailwind.config.js
-
----
+```
 
 ## 📌 Aprendizados
 
@@ -54,4 +55,4 @@ Boas práticas de responsividade
 ## 📲 Contato
 
 Desenvolvido por:
-Elane Alencar ![LinkedIn](https://linkedin.com/in/elanealencar/)  🚀
+Elane Alencar `[LinkedIn](https://linkedin.com/in/elanealencar/)` 
